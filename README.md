@@ -14,14 +14,20 @@ If you want to reproduct our experiment, please use same environment. We also th
 
 ## Usage
 
-First you need clone our code in your computer.
 ```
-$ git clone https://github.com/milk2we/conv_pool_algorithm.git
-$ cd conv_pool_algorithm
-$ wget $(Datasets-link)
-$ unzip datasets.zip
+$ git clone https://github.com/Darcy-Chen/Accelerating.git
+$ cd Accelerating
+$ wget https://www.dropbox.com/s/5yeny1wv0ayn481/dataset.zip?dl=0
+$ mv 'dataset.zip?dl=0' dataset.zip
+$ unzip dataset.zip
 ```
-Data-Link can be found from https://drive.google.com/file/d/1Mc5R3-P-4zNucER1o39VVZqXcTQmZdJ6/view?usp=sharing
+
+When running on Jetson using Docker Container, run this before installing:
+```
+apt-get update
+apt-get install -y sudo
+sudo apt-get install unzip
+```
 
 If you want to only using the code of convolution:
 
