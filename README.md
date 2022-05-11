@@ -41,9 +41,9 @@ $ cd PECR
 $ bash run_pecr_comparation.sh
 ```
 
-## Contributing
+## Notes
 
-PRs accepted.
+- Change Makefile from /ECR/cudnn and /PECR/cudnn line 37, 245, 246 to match your local cudnn path, line 251 to match the architecture of the device
 
 ## License
 

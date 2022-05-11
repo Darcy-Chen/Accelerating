@@ -34,7 +34,7 @@
 ################################################################################
 
 # Location of the CUDA Toolkit
-CUDA_PATH ?= "/usr/local/cuda-10.1"
+CUDA_PATH ?= /usr/local/cuda-10.2
 
 ##############################
 # start deprecated interface #
@@ -242,13 +242,13 @@ ALL_LDFLAGS += $(addprefix -Xlinker ,$(LDFLAGS))
 ALL_LDFLAGS += $(addprefix -Xlinker ,$(EXTRA_LDFLAGS))
 
 # Common includes and paths for CUDA
-INCLUDES  := -I../../common/inc
-LIBRARIES :=
+INCLUDES  := -I /usr/local/cuda-10.2/include
+LIBRARIES := -L /usr/local/cuda-10.2/lib
 
 ################################################################################
 
 # Gencode arguments
-SMS ?= 30 35 37 50 52 60 61 70 75
+SMS ?= 72
 
 ifeq ($(SMS),)
 $(info >>> WARNING - no SM architectures have been specified - waiving sample <<<)
