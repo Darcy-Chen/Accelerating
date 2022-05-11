@@ -157,7 +157,7 @@ float *filt_data;
   cudnnConvolutionFwdAlgoPerf_t algo_perf[n_requestedAlgo];
   int n_returnedAlgo;
 
-  CUDNN_CALL(cudnnGetConvolutionForwardAlgorithm(
+  CUDNN_CALL(cudnnFindConvolutionForwardAlgorithm(
       cudnn,
       in_desc, filt_desc, conv_desc, out_desc,
       n_requestedAlgo, &n_returnedAlgo, algo_perf));
