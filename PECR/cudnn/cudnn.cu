@@ -162,7 +162,7 @@ float *filt_data;
       in_desc, filt_desc, conv_desc, out_desc,
       n_requestedAlgo, &n_returnedAlgo, algo_perf));
 
-  algo = algo_perf[0].algo;
+  cudnnConvolutionFwdAlgo_t algo = algo_perf[0].algo;
 
 
   // workspace
