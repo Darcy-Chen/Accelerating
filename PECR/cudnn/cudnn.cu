@@ -134,7 +134,7 @@ float *filt_data;
         pad_h, pad_w, str_h, str_w, dil_h, dil_w,
         CUDNN_CONVOLUTION, CUDNN_DATA_FLOAT));
 
- 
+
 
   CUDNN_CALL(cudnnGetConvolution2dForwardOutputDim(
         conv_desc, in_desc, filt_desc,
@@ -153,13 +153,16 @@ float *filt_data;
         &out_data, out_n * out_c * out_h * out_w * sizeof(float)));
 
   // algorithm
-  cudnnConvolutionFwdAlgo_t algo ;//=CUDNN_CONVOLUTION_FWD_ALGO_WINOGRAD_NONFUSED;//= CUDNN_CONVOLUTION_FWD_ALGO_WINOGRAD_NONFUSED ;
+  const int n_requestedAlgo = 20;
+  cudnnConvolutionFwdAlgoPerf_t algo_perf[n_requestedAlgo];
+  int n_returnedAlgo;
 
   CUDNN_CALL(cudnnGetConvolutionForwardAlgorithm(
       cudnn,
       in_desc, filt_desc, conv_desc, out_desc,
-    CUDNN_CONVOLUTION_FWD_PREFER_FASTEST, 0, &algo));
+      n_requestedAlgo, &n_returnedAlgo, algo_perf));
 
+  algo = algo_perf[0].algo;
 
 
   // workspace
