@@ -153,7 +153,7 @@ float *filt_data;
         &out_data, out_n * out_c * out_h * out_w * sizeof(float)));
 
   // algorithm
-  const int n_requestedAlgo = 20;
+  const int n_requestedAlgo = 10;
   cudnnConvolutionFwdAlgoPerf_t algo_perf[n_requestedAlgo];
   int n_returnedAlgo;
 
