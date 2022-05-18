@@ -1,6 +1,6 @@
 # Accelerating convolutional neural network on GPUs
 
-This is the source code of Accelerating convolutional neural network on GPUs. 
+This is a copy of the source code of Accelerating convolutional neural network on GPUs. 
 
 ## Experiment environment
 
